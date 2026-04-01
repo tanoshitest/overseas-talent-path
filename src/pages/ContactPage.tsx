@@ -5,12 +5,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useTranslation } from "@/lib/LanguageContext";
 import { useToast } from "@/hooks/use-toast";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function ContactPage() {
   const { t } = useTranslation();
   const { toast } = useToast();
-  const { ref, isVisible } = useScrollReveal();
   const [errors, setErrors] = useState<Record<string, boolean>>({});
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -40,25 +39,22 @@ export default function ContactPage() {
     <>
       {/* Hero banner */}
       <section className="relative overflow-hidden" style={{ background: "linear-gradient(135deg, hsl(220, 46%, 18%) 0%, hsl(220, 40%, 28%) 100%)" }}>
-        <img
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80"
-          alt="Modern office"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80" alt="" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-primary/85" />
         <div className="container-main relative z-10 py-20 md:py-28 px-4 md:px-6 text-center">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-3">{t.contact.title}</h1>
-          <p className="text-lg text-white/70 max-w-xl mx-auto">{t.contact.subtitle}</p>
+          <ScrollReveal animation="fade-down">
+            <h1 className="text-3xl md:text-5xl font-bold text-white mb-3">{t.contact.title}</h1>
+          </ScrollReveal>
+          <ScrollReveal animation="blur-in" delay={200}>
+            <p className="text-lg text-white/70 max-w-xl mx-auto">{t.contact.subtitle}</p>
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="section-padding bg-background">
-        <div
-          className={`container-main grid grid-cols-1 lg:grid-cols-5 gap-12 ${isVisible ? "animate-fade-up" : "opacity-0"}`}
-          ref={ref}
-        >
+        <div className="container-main grid grid-cols-1 lg:grid-cols-5 gap-12">
           {/* Form */}
-          <div className="lg:col-span-3">
+          <ScrollReveal animation="fade-left" className="lg:col-span-3">
             <div className="bg-card rounded-xl border border-border shadow-sm p-6 md:p-8">
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -103,64 +99,59 @@ export default function ContactPage() {
                 <a href="mailto:info@ihpvietnam.com" className="text-accent hover:underline font-medium">info@ihpvietnam.com</a>
               </p>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Info sidebar */}
           <div className="lg:col-span-2 space-y-6">
-            {/* Book a call card */}
-            <div className="relative overflow-hidden rounded-xl">
-              <img
-                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80"
-                alt="Book a call"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-primary/90" />
-              <div className="relative z-10 p-6">
-                <Calendar className="h-8 w-8 text-accent mb-3" />
-                <h3 className="text-lg font-semibold mb-1 text-white">{t.contact.bookCall}</h3>
-                <p className="text-sm text-white/70 mb-4">{t.contact.bookCallSub}</p>
-                <Button variant="ctaWhite" size="lg" asChild>
-                  <a href="#" target="_blank" rel="noopener noreferrer">{t.contact.bookBtn}</a>
-                </Button>
+            <ScrollReveal animation="fade-right" delay={100}>
+              <div className="relative overflow-hidden rounded-xl">
+                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80" alt="" className="absolute inset-0 w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-primary/90" />
+                <div className="relative z-10 p-6">
+                  <Calendar className="h-8 w-8 text-accent mb-3" />
+                  <h3 className="text-lg font-semibold mb-1 text-white">{t.contact.bookCall}</h3>
+                  <p className="text-sm text-white/70 mb-4">{t.contact.bookCallSub}</p>
+                  <Button variant="ctaWhite" size="lg" asChild>
+                    <a href="#" target="_blank" rel="noopener noreferrer">{t.contact.bookBtn}</a>
+                  </Button>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
 
-            {/* Contact details */}
-            <div className="bg-card rounded-xl border border-border p-6 space-y-4">
-              <div className="flex items-center gap-3 text-sm text-foreground">
-                <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
-                  <Mail className="h-4 w-4 text-accent" />
+            <ScrollReveal animation="fade-right" delay={250}>
+              <div className="bg-card rounded-xl border border-border p-6 space-y-4">
+                <div className="flex items-center gap-3 text-sm text-foreground">
+                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                    <Mail className="h-4 w-4 text-accent" />
+                  </div>
+                  info@ihpvietnam.com
                 </div>
-                info@ihpvietnam.com
-              </div>
-              <div className="flex items-center gap-3 text-sm text-foreground">
-                <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
-                  <Phone className="h-4 w-4 text-accent" />
+                <div className="flex items-center gap-3 text-sm text-foreground">
+                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                    <Phone className="h-4 w-4 text-accent" />
+                  </div>
+                  +49 69 123 4567
                 </div>
-                +49 69 123 4567
-              </div>
-              <div className="flex items-center gap-3 text-sm text-foreground">
-                <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
-                  <MessageCircle className="h-4 w-4 text-accent" />
+                <div className="flex items-center gap-3 text-sm text-foreground">
+                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                    <MessageCircle className="h-4 w-4 text-accent" />
+                  </div>
+                  +49 170 123 4567 (WhatsApp)
                 </div>
-                +49 170 123 4567 (WhatsApp)
-              </div>
-              <div className="flex items-start gap-3 text-sm text-foreground">
-                <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 mt-0.5">
-                  <MapPin className="h-4 w-4 text-accent" />
+                <div className="flex items-start gap-3 text-sm text-foreground">
+                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <MapPin className="h-4 w-4 text-accent" />
+                  </div>
+                  Kaiserstraße 50, 60329 Frankfurt am Main, Germany
                 </div>
-                Kaiserstraße 50, 60329 Frankfurt am Main, Germany
               </div>
-            </div>
+            </ScrollReveal>
 
-            {/* Map with image */}
-            <div className="img-zoom rounded-xl shadow-sm border border-border overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400&q=80"
-                alt="Frankfurt am Main skyline"
-                className="w-full h-44 object-cover"
-              />
-            </div>
+            <ScrollReveal animation="zoom-in" delay={400}>
+              <div className="img-zoom rounded-xl shadow-sm border border-border overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400&q=80" alt="Frankfurt am Main" className="w-full h-44 object-cover" />
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
