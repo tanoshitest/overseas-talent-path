@@ -272,5 +272,5 @@ const translations = {
 } as const;
 
 export type Language = "en" | "de";
-export type Translations = typeof translations.en;
+export type Translations = (typeof translations)["en"];
 export default translations;
