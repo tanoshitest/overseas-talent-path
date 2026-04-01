@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle, Send, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -34,94 +34,136 @@ export default function ContactPage() {
   };
 
   const fieldClass = (name: string) =>
-    `${errors[name] ? "border-destructive" : ""}`;
+    `${errors[name] ? "border-destructive ring-1 ring-destructive/30" : ""}`;
 
   return (
-    <section className="section-padding bg-background">
-      <div
-        className={`container-main grid grid-cols-1 lg:grid-cols-5 gap-12 ${isVisible ? "animate-fade-up" : "opacity-0"}`}
-        ref={ref}
-      >
-        {/* Form */}
-        <div className="lg:col-span-3">
-          <h2 className="text-h2 text-foreground mb-2">{t.contact.title}</h2>
-          <p className="text-body text-muted-foreground mb-8">{t.contact.subtitle}</p>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="text-sm font-medium text-foreground mb-1 block">{t.contact.fields.company} *</label>
-                <Input name="company" className={fieldClass("company")} />
-                {errors.company && <p className="text-xs text-destructive mt-1">Required</p>}
-              </div>
-              <div>
-                <label className="text-sm font-medium text-foreground mb-1 block">{t.contact.fields.person} *</label>
-                <Input name="person" className={fieldClass("person")} />
-                {errors.person && <p className="text-xs text-destructive mt-1">Required</p>}
-              </div>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="text-sm font-medium text-foreground mb-1 block">{t.contact.fields.email} *</label>
-                <Input name="email" type="email" className={fieldClass("email")} />
-                {errors.email && <p className="text-xs text-destructive mt-1">Required</p>}
-              </div>
-              <div>
-                <label className="text-sm font-medium text-foreground mb-1 block">{t.contact.fields.phone}</label>
-                <Input name="phone" type="tel" />
-              </div>
-            </div>
-            <div>
-              <label className="text-sm font-medium text-foreground mb-1 block">{t.contact.fields.positions}</label>
-              <Input name="positions" type="number" min="1" />
-            </div>
-            <div>
-              <label className="text-sm font-medium text-foreground mb-1 block">{t.contact.fields.message} *</label>
-              <Textarea name="message" rows={5} className={fieldClass("message")} />
-              {errors.message && <p className="text-xs text-destructive mt-1">Required</p>}
-            </div>
-            <Button type="submit" variant="hero" size="xl" className="w-full">
-              {t.contact.submit}
-            </Button>
-          </form>
-          <p className="text-sm text-muted-foreground mt-4">
-            {t.contact.directReach}{" "}
-            <a href="mailto:info@talentbridge.de" className="text-accent hover:underline">info@talentbridge.de</a>
-          </p>
+    <>
+      {/* Hero banner */}
+      <section className="relative overflow-hidden" style={{ background: "linear-gradient(135deg, hsl(220, 46%, 18%) 0%, hsl(220, 40%, 28%) 100%)" }}>
+        <img
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80"
+          alt="Modern office"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-primary/85" />
+        <div className="container-main relative z-10 py-20 md:py-28 px-4 md:px-6 text-center">
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-3">{t.contact.title}</h1>
+          <p className="text-lg text-white/70 max-w-xl mx-auto">{t.contact.subtitle}</p>
         </div>
+      </section>
 
-        {/* Info */}
-        <div className="lg:col-span-2">
-          <div className="bg-primary text-primary-foreground rounded-xl p-6 mb-6">
-            <h3 className="text-lg font-semibold mb-1">{t.contact.bookCall}</h3>
-            <p className="text-sm text-primary-foreground/70 mb-4">{t.contact.bookCallSub}</p>
-            <Button variant="ctaWhite" size="lg" asChild>
-              <a href="#" target="_blank" rel="noopener noreferrer">{t.contact.bookBtn}</a>
-            </Button>
+      <section className="section-padding bg-background">
+        <div
+          className={`container-main grid grid-cols-1 lg:grid-cols-5 gap-12 ${isVisible ? "animate-fade-up" : "opacity-0"}`}
+          ref={ref}
+        >
+          {/* Form */}
+          <div className="lg:col-span-3">
+            <div className="bg-card rounded-xl border border-border shadow-sm p-6 md:p-8">
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-sm font-medium text-foreground mb-1.5 block">{t.contact.fields.company} *</label>
+                    <Input name="company" className={`h-11 ${fieldClass("company")}`} />
+                    {errors.company && <p className="text-xs text-destructive mt-1">Required</p>}
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-foreground mb-1.5 block">{t.contact.fields.person} *</label>
+                    <Input name="person" className={`h-11 ${fieldClass("person")}`} />
+                    {errors.person && <p className="text-xs text-destructive mt-1">Required</p>}
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-sm font-medium text-foreground mb-1.5 block">{t.contact.fields.email} *</label>
+                    <Input name="email" type="email" className={`h-11 ${fieldClass("email")}`} />
+                    {errors.email && <p className="text-xs text-destructive mt-1">Required</p>}
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-foreground mb-1.5 block">{t.contact.fields.phone}</label>
+                    <Input name="phone" type="tel" className="h-11" />
+                  </div>
+                </div>
+                <div>
+                  <label className="text-sm font-medium text-foreground mb-1.5 block">{t.contact.fields.positions}</label>
+                  <Input name="positions" type="number" min="1" className="h-11" />
+                </div>
+                <div>
+                  <label className="text-sm font-medium text-foreground mb-1.5 block">{t.contact.fields.message} *</label>
+                  <Textarea name="message" rows={5} className={fieldClass("message")} />
+                  {errors.message && <p className="text-xs text-destructive mt-1">Required</p>}
+                </div>
+                <Button type="submit" variant="hero" size="xl" className="w-full group">
+                  <Send className="mr-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  {t.contact.submit}
+                </Button>
+              </form>
+              <p className="text-sm text-muted-foreground mt-4">
+                {t.contact.directReach}{" "}
+                <a href="mailto:info@ihpvietnam.com" className="text-accent hover:underline font-medium">info@ihpvietnam.com</a>
+              </p>
+            </div>
           </div>
 
-          <div className="space-y-4">
-            <div className="flex items-center gap-3 text-sm text-foreground">
-              <Mail className="h-5 w-5 text-accent" /> info@talentbridge.de
+          {/* Info sidebar */}
+          <div className="lg:col-span-2 space-y-6">
+            {/* Book a call card */}
+            <div className="relative overflow-hidden rounded-xl">
+              <img
+                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80"
+                alt="Book a call"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-primary/90" />
+              <div className="relative z-10 p-6">
+                <Calendar className="h-8 w-8 text-accent mb-3" />
+                <h3 className="text-lg font-semibold mb-1 text-white">{t.contact.bookCall}</h3>
+                <p className="text-sm text-white/70 mb-4">{t.contact.bookCallSub}</p>
+                <Button variant="ctaWhite" size="lg" asChild>
+                  <a href="#" target="_blank" rel="noopener noreferrer">{t.contact.bookBtn}</a>
+                </Button>
+              </div>
             </div>
-            <div className="flex items-center gap-3 text-sm text-foreground">
-              <Phone className="h-5 w-5 text-accent" /> +49 69 123 4567
-            </div>
-            <div className="flex items-center gap-3 text-sm text-foreground">
-              <MessageCircle className="h-5 w-5 text-accent" /> +49 170 123 4567 (WhatsApp)
-            </div>
-            <div className="flex items-start gap-3 text-sm text-foreground">
-              <MapPin className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-              Kaiserstraße 50, 60329 Frankfurt am Main, Germany
-            </div>
-          </div>
 
-          {/* Map placeholder */}
-          <div className="mt-6 rounded-xl bg-section-bg border border-border h-40 flex flex-col items-center justify-center">
-            <MapPin className="h-8 w-8 text-muted-foreground mb-2" />
-            <span className="text-sm text-muted-foreground">Frankfurt am Main</span>
+            {/* Contact details */}
+            <div className="bg-card rounded-xl border border-border p-6 space-y-4">
+              <div className="flex items-center gap-3 text-sm text-foreground">
+                <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                  <Mail className="h-4 w-4 text-accent" />
+                </div>
+                info@ihpvietnam.com
+              </div>
+              <div className="flex items-center gap-3 text-sm text-foreground">
+                <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                  <Phone className="h-4 w-4 text-accent" />
+                </div>
+                +49 69 123 4567
+              </div>
+              <div className="flex items-center gap-3 text-sm text-foreground">
+                <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                  <MessageCircle className="h-4 w-4 text-accent" />
+                </div>
+                +49 170 123 4567 (WhatsApp)
+              </div>
+              <div className="flex items-start gap-3 text-sm text-foreground">
+                <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 mt-0.5">
+                  <MapPin className="h-4 w-4 text-accent" />
+                </div>
+                Kaiserstraße 50, 60329 Frankfurt am Main, Germany
+              </div>
+            </div>
+
+            {/* Map with image */}
+            <div className="img-zoom rounded-xl shadow-sm border border-border overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400&q=80"
+                alt="Frankfurt am Main skyline"
+                className="w-full h-44 object-cover"
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

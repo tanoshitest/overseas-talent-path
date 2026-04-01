@@ -39,7 +39,7 @@ const translations: Record<"en" | "de", TranslationStrings> = {
       contact: "Contact",
     },
     about: {
-      heroTitle: "About TalentBridge",
+      heroTitle: "About IHP VIETNAM",
       heroSubtitle: "We bridge the gap between German businesses and global talent — with integrity, quality, and care.",
       missionTitle: "Our Mission",
       missionText: "To provide German SMEs with reliable access to pre-trained, culturally prepared international talent, reducing hiring costs and time while ensuring long-term retention and mutual success.",
@@ -53,7 +53,7 @@ const translations: Record<"en" | "de", TranslationStrings> = {
         { title: "Inclusion", desc: "We believe diverse teams drive innovation and growth." },
       ],
       storyTitle: "Our Story",
-      storyText: "Founded in Frankfurt in 2020, TalentBridge was born from a simple observation: German companies desperately need skilled workers, while talented professionals abroad seek opportunity. We created a structured, ethical recruitment process that prepares candidates before they arrive — with language training, vocational certification, and cultural orientation. Today, we've placed over 500 professionals across 12 industries, with a 95% retention rate after one year.",
+      storyText: "Founded in Frankfurt in 2020, IHP VIETNAM was born from a simple observation: German companies desperately need skilled workers, while talented professionals abroad seek opportunity. We created a structured, ethical recruitment process that prepares candidates before they arrive — with language training, vocational certification, and cultural orientation. Today, we've placed over 500 professionals across 12 industries, with a 95% retention rate after one year.",
       teamTitle: "Meet Our Team",
       teamSubtitle: "Experienced professionals dedicated to connecting talent with opportunity.",
       team: [
@@ -114,13 +114,13 @@ const translations: Record<"en" | "de", TranslationStrings> = {
     testimonials: {
       title: "Success stories",
       items: [
-        { text: "TalentBridge delivered exactly the candidates we needed. The entire process was seamless, from the first call to the day our new team members arrived.", name: "Maria Schmidt", role: "HR Director, AutoTech GmbH" },
-        { text: "We were struggling to fill CNC positions for over a year. Within 6 weeks, TalentBridge introduced 3 qualified candidates — all still with us today.", name: "Thomas Weber", role: "Operations Manager, PräzisionWerk AG" },
+        { text: "IHP VIETNAM delivered exactly the candidates we needed. The entire process was seamless, from the first call to the day our new team members arrived.", name: "Maria Schmidt", role: "HR Director, AutoTech GmbH" },
+        { text: "We were struggling to fill CNC positions for over a year. Within 6 weeks, IHP VIETNAM introduced 3 qualified candidates — all still with us today.", name: "Thomas Weber", role: "Operations Manager, PräzisionWerk AG" },
         { text: "The quality of preparation impressed us. Candidates arrived with real skills and enough German to integrate quickly.", name: "Claudia Meier", role: "Team Lead, BauPro Solutions" },
       ],
     },
     whyUs: {
-      title: "Why choose TalentBridge",
+      title: "Why choose IHP VIETNAM",
       items: [
         { title: "End-to-end support", desc: "From sourcing to onboarding, we manage every step." },
         { title: "Proven track record", desc: "500+ successful placements across 12 industries." },
@@ -188,7 +188,7 @@ const translations: Record<"en" | "de", TranslationStrings> = {
       impressum: "Impressum",
       datenschutz: "Datenschutz",
       contactTitle: "Contact",
-      rights: "© 2025 TalentBridge. All rights reserved.",
+      rights: "© 2025 IHP VIETNAM. All rights reserved.",
     },
   },
   de: {
@@ -199,7 +199,7 @@ const translations: Record<"en" | "de", TranslationStrings> = {
       contact: "Kontakt",
     },
     about: {
-      heroTitle: "Über TalentBridge",
+      heroTitle: "Über IHP VIETNAM",
       heroSubtitle: "Wir überbrücken die Lücke zwischen deutschen Unternehmen und globalen Talenten — mit Integrität, Qualität und Sorgfalt.",
       missionTitle: "Unsere Mission",
       missionText: "Deutschen KMUs zuverlässigen Zugang zu vorausgebildeten, kulturell vorbereiteten internationalen Talenten zu bieten und dabei Kosten und Zeit zu senken.",
@@ -213,7 +213,7 @@ const translations: Record<"en" | "de", TranslationStrings> = {
         { title: "Inklusion", desc: "Wir glauben, dass vielfältige Teams Innovation und Wachstum vorantreiben." },
       ],
       storyTitle: "Unsere Geschichte",
-      storyText: "TalentBridge wurde 2020 in Frankfurt gegründet, basierend auf einer einfachen Beobachtung: Deutsche Unternehmen brauchen dringend Fachkräfte, während talentierte Fachleute im Ausland Chancen suchen. Wir haben einen strukturierten, ethischen Rekrutierungsprozess geschaffen, der Kandidaten vorbereitet, bevor sie ankommen. Heute haben wir über 500 Fachkräfte in 12 Branchen vermittelt, mit einer Verbleibrate von 95% nach einem Jahr.",
+      storyText: "IHP VIETNAM wurde 2020 in Frankfurt gegründet, basierend auf einer einfachen Beobachtung: Deutsche Unternehmen brauchen dringend Fachkräfte, während talentierte Fachleute im Ausland Chancen suchen. Wir haben einen strukturierten, ethischen Rekrutierungsprozess geschaffen, der Kandidaten vorbereitet, bevor sie ankommen. Heute haben wir über 500 Fachkräfte in 12 Branchen vermittelt, mit einer Verbleibrate von 95% nach einem Jahr.",
       teamTitle: "Unser Team",
       teamSubtitle: "Erfahrene Fachleute, die sich der Verbindung von Talent und Chancen widmen.",
       team: [
@@ -274,13 +274,13 @@ const translations: Record<"en" | "de", TranslationStrings> = {
     testimonials: {
       title: "Erfolgsgeschichten",
       items: [
-        { text: "TalentBridge hat genau die Kandidaten geliefert, die wir brauchten. Der gesamte Prozess war nahtlos, vom ersten Gespräch bis zur Ankunft unserer neuen Teammitglieder.", name: "Maria Schmidt", role: "HR-Direktorin, AutoTech GmbH" },
-        { text: "Wir hatten über ein Jahr lang Schwierigkeiten, CNC-Stellen zu besetzen. Innerhalb von 6 Wochen stellte TalentBridge 3 qualifizierte Kandidaten vor — alle sind heute noch bei uns.", name: "Thomas Weber", role: "Betriebsleiter, PräzisionWerk AG" },
+        { text: "IHP VIETNAM hat genau die Kandidaten geliefert, die wir brauchten. Der gesamte Prozess war nahtlos, vom ersten Gespräch bis zur Ankunft unserer neuen Teammitglieder.", name: "Maria Schmidt", role: "HR-Direktorin, AutoTech GmbH" },
+        { text: "Wir hatten über ein Jahr lang Schwierigkeiten, CNC-Stellen zu besetzen. Innerhalb von 6 Wochen stellte IHP VIETNAM 3 qualifizierte Kandidaten vor — alle sind heute noch bei uns.", name: "Thomas Weber", role: "Betriebsleiter, PräzisionWerk AG" },
         { text: "Die Qualität der Vorbereitung hat uns beeindruckt. Die Kandidaten kamen mit echten Fähigkeiten und ausreichend Deutsch, um sich schnell zu integrieren.", name: "Claudia Meier", role: "Teamleiterin, BauPro Solutions" },
       ],
     },
     whyUs: {
-      title: "Warum TalentBridge wählen",
+      title: "Warum IHP VIETNAM wählen",
       items: [
         { title: "Rundum-Unterstützung", desc: "Von der Suche bis zum Onboarding kümmern wir uns um jeden Schritt." },
         { title: "Nachgewiesene Erfolgsbilanz", desc: "500+ erfolgreiche Vermittlungen in 12 Branchen." },
@@ -348,7 +348,7 @@ const translations: Record<"en" | "de", TranslationStrings> = {
       impressum: "Impressum",
       datenschutz: "Datenschutz",
       contactTitle: "Kontakt",
-      rights: "© 2025 TalentBridge. Alle Rechte vorbehalten.",
+      rights: "© 2025 IHP VIETNAM. Alle Rechte vorbehalten.",
     },
   },
 };
