@@ -34,8 +34,33 @@ const translations: Record<"en" | "de", TranslationStrings> = {
   en: {
     nav: {
       home: "Home",
+      about: "About Us",
       employers: "For Employers",
       contact: "Contact",
+    },
+    about: {
+      heroTitle: "About TalentBridge",
+      heroSubtitle: "We bridge the gap between German businesses and global talent — with integrity, quality, and care.",
+      missionTitle: "Our Mission",
+      missionText: "To provide German SMEs with reliable access to pre-trained, culturally prepared international talent, reducing hiring costs and time while ensuring long-term retention and mutual success.",
+      visionTitle: "Our Vision",
+      visionText: "A world where borders don't limit opportunity — where skilled workers find meaningful careers and businesses find the people they need to thrive.",
+      valuesTitle: "Our Values",
+      values: [
+        { title: "Integrity", desc: "We operate with full transparency in every placement and partnership." },
+        { title: "Quality", desc: "Every candidate is rigorously vetted for skills, language, and cultural readiness." },
+        { title: "Partnership", desc: "We build long-term relationships, not transactional deals." },
+        { title: "Inclusion", desc: "We believe diverse teams drive innovation and growth." },
+      ],
+      storyTitle: "Our Story",
+      storyText: "Founded in Frankfurt in 2020, TalentBridge was born from a simple observation: German companies desperately need skilled workers, while talented professionals abroad seek opportunity. We created a structured, ethical recruitment process that prepares candidates before they arrive — with language training, vocational certification, and cultural orientation. Today, we've placed over 500 professionals across 12 industries, with a 95% retention rate after one year.",
+      teamTitle: "Meet Our Team",
+      teamSubtitle: "Experienced professionals dedicated to connecting talent with opportunity.",
+      team: [
+        { name: "Lukas Bauer", role: "CEO & Co-Founder", bio: "15 years in international recruitment and workforce strategy." },
+        { name: "Fatima El-Amin", role: "Head of Talent", bio: "Expert in vocational training and candidate development programs." },
+        { name: "Sophie Klein", role: "Operations Director", bio: "Specializes in visa processing and administrative coordination." },
+      ],
     },
     hero: {
       title: "Qualified workers for your business — ready to start",
