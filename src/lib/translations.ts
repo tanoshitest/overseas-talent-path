@@ -194,8 +194,33 @@ const translations: Record<"en" | "de", TranslationStrings> = {
   de: {
     nav: {
       home: "Startseite",
+      about: "Über uns",
       employers: "Für Arbeitgeber",
       contact: "Kontakt",
+    },
+    about: {
+      heroTitle: "Über TalentBridge",
+      heroSubtitle: "Wir überbrücken die Lücke zwischen deutschen Unternehmen und globalen Talenten — mit Integrität, Qualität und Sorgfalt.",
+      missionTitle: "Unsere Mission",
+      missionText: "Deutschen KMUs zuverlässigen Zugang zu vorausgebildeten, kulturell vorbereiteten internationalen Talenten zu bieten und dabei Kosten und Zeit zu senken.",
+      visionTitle: "Unsere Vision",
+      visionText: "Eine Welt, in der Grenzen keine Chancen einschränken — wo Fachkräfte sinnvolle Karrieren und Unternehmen die Mitarbeiter finden, die sie brauchen.",
+      valuesTitle: "Unsere Werte",
+      values: [
+        { title: "Integrität", desc: "Wir arbeiten mit voller Transparenz in jeder Vermittlung und Partnerschaft." },
+        { title: "Qualität", desc: "Jeder Kandidat wird gründlich auf Fähigkeiten, Sprache und kulturelle Bereitschaft geprüft." },
+        { title: "Partnerschaft", desc: "Wir bauen langfristige Beziehungen auf, keine transaktionalen Geschäfte." },
+        { title: "Inklusion", desc: "Wir glauben, dass vielfältige Teams Innovation und Wachstum vorantreiben." },
+      ],
+      storyTitle: "Unsere Geschichte",
+      storyText: "TalentBridge wurde 2020 in Frankfurt gegründet, basierend auf einer einfachen Beobachtung: Deutsche Unternehmen brauchen dringend Fachkräfte, während talentierte Fachleute im Ausland Chancen suchen. Wir haben einen strukturierten, ethischen Rekrutierungsprozess geschaffen, der Kandidaten vorbereitet, bevor sie ankommen. Heute haben wir über 500 Fachkräfte in 12 Branchen vermittelt, mit einer Verbleibrate von 95% nach einem Jahr.",
+      teamTitle: "Unser Team",
+      teamSubtitle: "Erfahrene Fachleute, die sich der Verbindung von Talent und Chancen widmen.",
+      team: [
+        { name: "Lukas Bauer", role: "CEO & Mitgründer", bio: "15 Jahre Erfahrung in internationaler Rekrutierung und Personalstrategie." },
+        { name: "Fatima El-Amin", role: "Leiterin Talentmanagement", bio: "Expertin für Berufsausbildung und Kandidatenentwicklung." },
+        { name: "Sophie Klein", role: "Betriebsleiterin", bio: "Spezialisiert auf Visabearbeitung und administrative Koordination." },
+      ],
     },
     hero: {
       title: "Qualifizierte Fachkräfte für Ihr Unternehmen — sofort einsatzbereit",
