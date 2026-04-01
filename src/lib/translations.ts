@@ -1,5 +1,14 @@
 interface TranslationStrings {
-  nav: { home: string; employers: string; contact: string };
+  nav: { home: string; about: string; employers: string; contact: string };
+  about: {
+    heroTitle: string; heroSubtitle: string;
+    missionTitle: string; missionText: string;
+    visionTitle: string; visionText: string;
+    valuesTitle: string; values: { title: string; desc: string }[];
+    storyTitle: string; storyText: string;
+    teamTitle: string; teamSubtitle: string;
+    team: { name: string; role: string; bio: string }[];
+  };
   hero: { title: string; subtitle: string; cta1: string; cta2: string };
   problem: { title: string; cards: { title: string; desc: string }[] };
   solution: { title: string; bullets: string[]; profileName: string; profileSkills: string[]; profileBadge: string };
@@ -25,8 +34,33 @@ const translations: Record<"en" | "de", TranslationStrings> = {
   en: {
     nav: {
       home: "Home",
+      about: "About Us",
       employers: "For Employers",
       contact: "Contact",
+    },
+    about: {
+      heroTitle: "About TalentBridge",
+      heroSubtitle: "We bridge the gap between German businesses and global talent — with integrity, quality, and care.",
+      missionTitle: "Our Mission",
+      missionText: "To provide German SMEs with reliable access to pre-trained, culturally prepared international talent, reducing hiring costs and time while ensuring long-term retention and mutual success.",
+      visionTitle: "Our Vision",
+      visionText: "A world where borders don't limit opportunity — where skilled workers find meaningful careers and businesses find the people they need to thrive.",
+      valuesTitle: "Our Values",
+      values: [
+        { title: "Integrity", desc: "We operate with full transparency in every placement and partnership." },
+        { title: "Quality", desc: "Every candidate is rigorously vetted for skills, language, and cultural readiness." },
+        { title: "Partnership", desc: "We build long-term relationships, not transactional deals." },
+        { title: "Inclusion", desc: "We believe diverse teams drive innovation and growth." },
+      ],
+      storyTitle: "Our Story",
+      storyText: "Founded in Frankfurt in 2020, TalentBridge was born from a simple observation: German companies desperately need skilled workers, while talented professionals abroad seek opportunity. We created a structured, ethical recruitment process that prepares candidates before they arrive — with language training, vocational certification, and cultural orientation. Today, we've placed over 500 professionals across 12 industries, with a 95% retention rate after one year.",
+      teamTitle: "Meet Our Team",
+      teamSubtitle: "Experienced professionals dedicated to connecting talent with opportunity.",
+      team: [
+        { name: "Lukas Bauer", role: "CEO & Co-Founder", bio: "15 years in international recruitment and workforce strategy." },
+        { name: "Fatima El-Amin", role: "Head of Talent", bio: "Expert in vocational training and candidate development programs." },
+        { name: "Sophie Klein", role: "Operations Director", bio: "Specializes in visa processing and administrative coordination." },
+      ],
     },
     hero: {
       title: "Qualified workers for your business — ready to start",
@@ -160,8 +194,33 @@ const translations: Record<"en" | "de", TranslationStrings> = {
   de: {
     nav: {
       home: "Startseite",
+      about: "Über uns",
       employers: "Für Arbeitgeber",
       contact: "Kontakt",
+    },
+    about: {
+      heroTitle: "Über TalentBridge",
+      heroSubtitle: "Wir überbrücken die Lücke zwischen deutschen Unternehmen und globalen Talenten — mit Integrität, Qualität und Sorgfalt.",
+      missionTitle: "Unsere Mission",
+      missionText: "Deutschen KMUs zuverlässigen Zugang zu vorausgebildeten, kulturell vorbereiteten internationalen Talenten zu bieten und dabei Kosten und Zeit zu senken.",
+      visionTitle: "Unsere Vision",
+      visionText: "Eine Welt, in der Grenzen keine Chancen einschränken — wo Fachkräfte sinnvolle Karrieren und Unternehmen die Mitarbeiter finden, die sie brauchen.",
+      valuesTitle: "Unsere Werte",
+      values: [
+        { title: "Integrität", desc: "Wir arbeiten mit voller Transparenz in jeder Vermittlung und Partnerschaft." },
+        { title: "Qualität", desc: "Jeder Kandidat wird gründlich auf Fähigkeiten, Sprache und kulturelle Bereitschaft geprüft." },
+        { title: "Partnerschaft", desc: "Wir bauen langfristige Beziehungen auf, keine transaktionalen Geschäfte." },
+        { title: "Inklusion", desc: "Wir glauben, dass vielfältige Teams Innovation und Wachstum vorantreiben." },
+      ],
+      storyTitle: "Unsere Geschichte",
+      storyText: "TalentBridge wurde 2020 in Frankfurt gegründet, basierend auf einer einfachen Beobachtung: Deutsche Unternehmen brauchen dringend Fachkräfte, während talentierte Fachleute im Ausland Chancen suchen. Wir haben einen strukturierten, ethischen Rekrutierungsprozess geschaffen, der Kandidaten vorbereitet, bevor sie ankommen. Heute haben wir über 500 Fachkräfte in 12 Branchen vermittelt, mit einer Verbleibrate von 95% nach einem Jahr.",
+      teamTitle: "Unser Team",
+      teamSubtitle: "Erfahrene Fachleute, die sich der Verbindung von Talent und Chancen widmen.",
+      team: [
+        { name: "Lukas Bauer", role: "CEO & Mitgründer", bio: "15 Jahre Erfahrung in internationaler Rekrutierung und Personalstrategie." },
+        { name: "Fatima El-Amin", role: "Leiterin Talentmanagement", bio: "Expertin für Berufsausbildung und Kandidatenentwicklung." },
+        { name: "Sophie Klein", role: "Betriebsleiterin", bio: "Spezialisiert auf Visabearbeitung und administrative Koordination." },
+      ],
     },
     hero: {
       title: "Qualifizierte Fachkräfte für Ihr Unternehmen — sofort einsatzbereit",
