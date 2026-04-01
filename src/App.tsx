@@ -7,6 +7,7 @@ import Layout from "@/components/Layout";
 import HomePage from "@/pages/HomePage";
 import ForEmployersPage from "@/pages/ForEmployersPage";
 import ContactPage from "@/pages/ContactPage";
+import AboutPage from "@/pages/AboutPage";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();

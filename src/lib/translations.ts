@@ -1,5 +1,14 @@
 interface TranslationStrings {
-  nav: { home: string; employers: string; contact: string };
+  nav: { home: string; about: string; employers: string; contact: string };
+  about: {
+    heroTitle: string; heroSubtitle: string;
+    missionTitle: string; missionText: string;
+    visionTitle: string; visionText: string;
+    valuesTitle: string; values: { title: string; desc: string }[];
+    storyTitle: string; storyText: string;
+    teamTitle: string; teamSubtitle: string;
+    team: { name: string; role: string; bio: string }[];
+  };
   hero: { title: string; subtitle: string; cta1: string; cta2: string };
   problem: { title: string; cards: { title: string; desc: string }[] };
   solution: { title: string; bullets: string[]; profileName: string; profileSkills: string[]; profileBadge: string };
