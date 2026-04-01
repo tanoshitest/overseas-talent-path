@@ -292,8 +292,8 @@ const translations: Record<"en" | "de", TranslationStrings> = {
       rights: "© 2025 TalentBridge. Alle Rechte vorbehalten.",
     },
   },
-} as const;
+};
 
 export type Language = "en" | "de";
-export type Translations = (typeof translations)["en"];
+export type Translations = TranslationStrings;
 export default translations;
