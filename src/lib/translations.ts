@@ -1,4 +1,27 @@
-const translations = {
+interface TranslationStrings {
+  nav: { home: string; employers: string; contact: string };
+  hero: { title: string; subtitle: string; cta1: string; cta2: string };
+  problem: { title: string; cards: { title: string; desc: string }[] };
+  solution: { title: string; bullets: string[]; profileName: string; profileSkills: string[]; profileBadge: string };
+  process: { title: string; subtitle: string; steps: { title: string; desc: string }[] };
+  quality: { title: string; stats: { value: string; label: string }[]; cards: { title: string; desc: string }[] };
+  testimonials: { title: string; items: { text: string; name: string; role: string }[] };
+  whyUs: { title: string; items: { title: string; desc: string }[] };
+  cta: { title: string; subtitle: string; btn1: string; btn2: string; trust: string };
+  employers: {
+    heroTitle: string; heroSubtitle: string; heroCta: string;
+    servicesTitle: string; services: { title: string; desc: string; items: string[] }[];
+    benefitsTitle: string; benefits: { title: string; desc: string }[];
+  };
+  contact: {
+    title: string; subtitle: string;
+    fields: { company: string; person: string; email: string; phone: string; positions: string; message: string };
+    submit: string; directReach: string; bookCall: string; bookCallSub: string; bookBtn: string; successToast: string;
+  };
+  footer: { desc: string; quickLinks: string; impressum: string; datenschutz: string; contactTitle: string; rights: string };
+}
+
+const translations: Record<"en" | "de", TranslationStrings> = {
   en: {
     nav: {
       home: "Home",
