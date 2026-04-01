@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useTranslation } from "@/lib/LanguageContext";
 import { useToast } from "@/hooks/use-toast";
 import ScrollReveal from "@/components/ScrollReveal";
+import SafeImage from "@/components/SafeImage";
 
 export default function ContactPage() {
   const { t } = useTranslation();
@@ -21,25 +22,18 @@ export default function ContactPage() {
     if (!data.get("person")) newErrors.person = true;
     if (!data.get("email")) newErrors.email = true;
     if (!data.get("message")) newErrors.message = true;
-
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
-
+    if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return; }
     setErrors({});
     toast({ title: t.contact.successToast });
     form.reset();
   };
 
-  const fieldClass = (name: string) =>
-    `${errors[name] ? "border-destructive ring-1 ring-destructive/30" : ""}`;
+  const fieldClass = (name: string) => errors[name] ? "border-destructive ring-1 ring-destructive/30" : "";
 
   return (
     <>
-      {/* Hero banner */}
       <section className="relative overflow-hidden" style={{ background: "linear-gradient(135deg, hsl(220, 46%, 18%) 0%, hsl(220, 40%, 28%) 100%)" }}>
-        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <SafeImage src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-primary/85" />
         <div className="container-main relative z-10 py-20 md:py-28 px-4 md:px-6 text-center">
           <ScrollReveal animation="fade-down">
@@ -53,7 +47,6 @@ export default function ContactPage() {
 
       <section className="section-padding bg-background">
         <div className="container-main grid grid-cols-1 lg:grid-cols-5 gap-12">
-          {/* Form */}
           <ScrollReveal animation="fade-left" className="lg:col-span-3">
             <div className="bg-card rounded-xl border border-border shadow-sm p-6 md:p-8">
               <form onSubmit={handleSubmit} className="space-y-5">
@@ -101,11 +94,10 @@ export default function ContactPage() {
             </div>
           </ScrollReveal>
 
-          {/* Info sidebar */}
           <div className="lg:col-span-2 space-y-6">
             <ScrollReveal animation="fade-right" delay={100}>
-              <div className="relative overflow-hidden rounded-xl">
-                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80" alt="" className="absolute inset-0 w-full h-full object-cover" />
+              <div className="relative overflow-hidden rounded-xl" style={{ background: "linear-gradient(135deg, hsl(220, 46%, 18%) 0%, hsl(220, 40%, 28%) 100%)" }}>
+                <SafeImage src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80" className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-primary/90" />
                 <div className="relative z-10 p-6">
                   <Calendar className="h-8 w-8 text-accent mb-3" />
@@ -121,27 +113,19 @@ export default function ContactPage() {
             <ScrollReveal animation="fade-right" delay={250}>
               <div className="bg-card rounded-xl border border-border p-6 space-y-4">
                 <div className="flex items-center gap-3 text-sm text-foreground">
-                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
-                    <Mail className="h-4 w-4 text-accent" />
-                  </div>
+                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0"><Mail className="h-4 w-4 text-accent" /></div>
                   info@ihpvietnam.com
                 </div>
                 <div className="flex items-center gap-3 text-sm text-foreground">
-                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
-                    <Phone className="h-4 w-4 text-accent" />
-                  </div>
+                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0"><Phone className="h-4 w-4 text-accent" /></div>
                   +49 69 123 4567
                 </div>
                 <div className="flex items-center gap-3 text-sm text-foreground">
-                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
-                    <MessageCircle className="h-4 w-4 text-accent" />
-                  </div>
+                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0"><MessageCircle className="h-4 w-4 text-accent" /></div>
                   +49 170 123 4567 (WhatsApp)
                 </div>
                 <div className="flex items-start gap-3 text-sm text-foreground">
-                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <MapPin className="h-4 w-4 text-accent" />
-                  </div>
+                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 mt-0.5"><MapPin className="h-4 w-4 text-accent" /></div>
                   Kaiserstraße 50, 60329 Frankfurt am Main, Germany
                 </div>
               </div>
@@ -149,7 +133,7 @@ export default function ContactPage() {
 
             <ScrollReveal animation="zoom-in" delay={400}>
               <div className="img-zoom rounded-xl shadow-sm border border-border overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400&q=80" alt="Frankfurt am Main" className="w-full h-44 object-cover" />
+                <SafeImage src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400&q=80" className="w-full h-44 object-cover" />
               </div>
             </ScrollReveal>
           </div>

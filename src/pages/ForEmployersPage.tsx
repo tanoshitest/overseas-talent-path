@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/lib/LanguageContext";
 import SectionHeading from "@/components/SectionHeading";
 import ScrollReveal from "@/components/ScrollReveal";
+import SafeImage from "@/components/SafeImage";
 import ProcessSteps from "@/components/ProcessSteps";
 import CTASection from "@/components/CTASection";
 
@@ -16,7 +17,7 @@ export default function ForEmployersPage() {
     <>
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-center overflow-hidden" style={{ background: "linear-gradient(135deg, hsl(220, 46%, 18%) 0%, hsl(220, 40%, 28%) 100%)" }}>
-        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1920&q=80" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <SafeImage src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1920&q=80" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-primary/85" />
         <div className="container-main text-center relative z-10 py-20 px-4 md:px-6">
           <ScrollReveal animation="fade-down">
@@ -47,14 +48,14 @@ export default function ForEmployersPage() {
               const Icon = serviceIcons[i];
               const serviceImages = [
                 "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400&q=80",
-                "https://images.unsplash.com/photo-1504917595217-d4dc5ede4884?w=400&q=80",
-                "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&q=80",
+                "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&q=80",
+                "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&q=80",
               ];
               return (
                 <ScrollReveal key={i} delay={i * 150} animation="fade-up">
                   <div className="bg-background border border-border rounded-xl shadow-sm overflow-hidden h-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                     <div className="img-zoom h-40">
-                      <img src={serviceImages[i]} alt={svc.title} className="w-full h-full object-cover" />
+                      <SafeImage src={serviceImages[i]} className="w-full h-full object-cover" />
                     </div>
                     <div className="p-6">
                       <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-3">
@@ -99,7 +100,7 @@ export default function ForEmployersPage() {
                     <p className="text-muted-foreground leading-relaxed">{b.desc}</p>
                   </ScrollReveal>
                   <ScrollReveal animation={i % 2 === 0 ? "fade-right" : "fade-left"} className={`img-zoom rounded-xl shadow-lg ${i % 2 === 1 ? "lg:order-1" : ""}`}>
-                    <img src={benefitImages[i]} alt={b.title} className="w-full h-56 md:h-64 object-cover rounded-xl" />
+                    <SafeImage src={benefitImages[i]} className="w-full h-56 md:h-64 object-cover rounded-xl" />
                   </ScrollReveal>
                 </div>
               );

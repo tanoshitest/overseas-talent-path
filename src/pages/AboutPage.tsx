@@ -1,6 +1,7 @@
 import { useTranslation } from "@/lib/LanguageContext";
 import SectionHeading from "@/components/SectionHeading";
 import ScrollReveal from "@/components/ScrollReveal";
+import SafeImage from "@/components/SafeImage";
 import { Target, Eye, Users, Award, Globe, Handshake } from "lucide-react";
 
 export default function AboutPage() {
@@ -9,9 +10,8 @@ export default function AboutPage() {
 
   return (
     <>
-      {/* Hero */}
       <section className="relative min-h-[50vh] flex items-center overflow-hidden" style={{ background: "linear-gradient(135deg, hsl(220, 46%, 18%) 0%, hsl(220, 40%, 28%) 100%)" }}>
-        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <SafeImage src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-primary/85" />
         <div className="container-main px-4 md:px-6 text-center max-w-3xl mx-auto relative z-10 py-20 md:py-28">
           <ScrollReveal animation="fade-down">
@@ -23,7 +23,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission & Vision */}
       <section className="section-padding bg-background">
         <div className="container-main px-4 md:px-6 grid md:grid-cols-2 gap-8">
           {[
@@ -33,7 +32,7 @@ export default function AboutPage() {
             <ScrollReveal key={i} animation={i === 0 ? "fade-left" : "fade-right"} delay={i * 200}>
               <div className="bg-card rounded-xl shadow-sm border overflow-hidden hover:shadow-lg transition-shadow duration-300">
                 <div className="img-zoom h-48">
-                  <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
+                  <SafeImage src={item.img} className="w-full h-full object-cover" />
                 </div>
                 <div className="p-8">
                   <item.icon className="h-10 w-10 text-accent mb-4" />
@@ -46,7 +45,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values */}
       <section className="section-padding bg-section-bg">
         <div className="container-main px-4 md:px-6">
           <ScrollReveal animation="fade-up">
@@ -68,12 +66,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Story */}
       <section className="section-padding bg-background">
         <div className="container-main px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
           <ScrollReveal animation="fade-left">
             <div className="img-zoom rounded-xl shadow-xl">
-              <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Our story" className="w-full h-72 md:h-96 object-cover rounded-xl" />
+              <SafeImage src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" className="w-full h-72 md:h-96 object-cover rounded-xl" />
             </div>
           </ScrollReveal>
           <ScrollReveal animation="fade-right" delay={200}>
@@ -85,7 +82,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
       <section className="section-padding bg-section-bg">
         <div className="container-main px-4 md:px-6">
           <ScrollReveal animation="fade-up">
@@ -101,7 +97,7 @@ export default function AboutPage() {
               return (
                 <ScrollReveal key={i} animation="fade-up" delay={i * 150}>
                   <div className="bg-card rounded-xl p-6 shadow-sm border text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                    <img src={teamImages[i]} alt={member.name} className="w-20 h-20 rounded-full object-cover mx-auto mb-4 ring-4 ring-accent/20" />
+                    <SafeImage src={teamImages[i]} className="w-20 h-20 rounded-full object-cover mx-auto mb-4 ring-4 ring-accent/20" />
                     <h4 className="font-bold text-foreground">{member.name}</h4>
                     <p className="text-accent text-sm font-medium mb-2">{member.role}</p>
                     <p className="text-muted-foreground text-sm">{member.bio}</p>

@@ -9,6 +9,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useCountUp } from "@/hooks/useCountUp";
 import SectionHeading from "@/components/SectionHeading";
 import ScrollReveal from "@/components/ScrollReveal";
+import SafeImage from "@/components/SafeImage";
 import ProcessSteps from "@/components/ProcessSteps";
 import CTASection from "@/components/CTASection";
 
@@ -34,12 +35,10 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden" style={{ background: "linear-gradient(135deg, hsl(220, 46%, 18%) 0%, hsl(220, 40%, 28%) 50%, hsl(220, 35%, 35%) 100%)" }}>
-        <img
+        <SafeImage
           src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80"
-          alt=""
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
-          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/75 to-primary/50" />
         <div className="container-main relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-4 md:px-6">
@@ -73,13 +72,12 @@ export default function HomePage() {
             </ScrollReveal>
           </div>
 
-          {/* Floating candidate cards */}
           <div className="hidden lg:flex justify-center">
             <div className="relative w-72 h-80">
               {[
-                { initials: "AK", name: "Ahmad K.", role: "CNC Operator", color: "bg-accent", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" },
-                { initials: "SJ", name: "Sara J.", role: "Electrician", color: "bg-primary", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" },
-                { initials: "ML", name: "Marco L.", role: "Welder", color: "bg-success", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" },
+                { name: "Ahmad K.", role: "CNC Operator", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" },
+                { name: "Sara J.", role: "Electrician", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" },
+                { name: "Marco L.", role: "Welder", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" },
               ].map((person, i) => (
                 <ScrollReveal key={i} animation="fade-right" delay={300 + i * 200}>
                   <div
@@ -89,7 +87,7 @@ export default function HomePage() {
                     style={{ marginTop: `${i * 8}px`, marginLeft: `${i * 24}px` }}
                   >
                     <div className="flex items-center gap-3 mb-2">
-                      <img src={person.img} alt={person.name} className="w-10 h-10 rounded-full object-cover ring-2 ring-white" />
+                      <SafeImage src={person.img} alt={person.name} className="w-10 h-10 rounded-full object-cover ring-2 ring-white" />
                       <div>
                         <div className="text-sm font-semibold text-foreground">{person.name}</div>
                         <div className="text-xs text-muted-foreground">{person.role}</div>
@@ -153,15 +151,14 @@ export default function HomePage() {
             <ScrollReveal animation="fade-right" delay={200}>
               <div className="relative">
                 <div className="img-zoom rounded-xl shadow-xl">
-                  <img
+                  <SafeImage
                     src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80"
-                    alt="Professional worker training"
                     className="w-full h-64 md:h-80 object-cover rounded-xl"
                   />
                 </div>
                 <div className="absolute -bottom-6 -left-4 md:-left-6 glass-card rounded-xl shadow-xl p-4 max-w-[220px] animate-float-slow">
                   <div className="flex items-center gap-3 mb-3">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt={t.solution.profileName} className="w-12 h-12 rounded-full object-cover ring-2 ring-accent" />
+                    <SafeImage src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" className="w-12 h-12 rounded-full object-cover ring-2 ring-accent" />
                     <div>
                       <div className="font-semibold text-foreground text-sm">{t.solution.profileName}</div>
                       <span className="text-xs bg-success/10 text-success px-2 py-0.5 rounded-full font-medium">{t.solution.profileBadge}</span>
@@ -179,7 +176,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Process */}
       <ProcessSteps />
 
       {/* Candidate Quality */}
@@ -206,7 +202,7 @@ export default function HomePage() {
                 <ScrollReveal key={i} delay={i * 150} animation="zoom-in">
                   <div className="bg-background rounded-xl shadow-sm overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
                     <div className="img-zoom h-40">
-                      <img src={images[i]} alt={card.title} className="w-full h-full object-cover" />
+                      <SafeImage src={images[i]} className="w-full h-full object-cover" />
                     </div>
                     <div className="p-6">
                       <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-3">
@@ -253,7 +249,7 @@ export default function HomePage() {
 
       {/* Why Us */}
       <section className="relative section-padding overflow-hidden" style={{ background: "linear-gradient(135deg, hsl(220, 46%, 18%) 0%, hsl(220, 40%, 28%) 100%)" }}>
-        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&q=80" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <SafeImage src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&q=80" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-primary/90" />
         <div className="container-main relative z-10">
           <ScrollReveal animation="blur-in">
@@ -280,7 +276,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
       <CTASection />
     </>
   );
